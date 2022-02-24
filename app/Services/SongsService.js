@@ -3,6 +3,14 @@ import Song from "../Models/Song.js";
 import { sandBoxApi } from "./AxiosService.js";
 
 class SongsService {
+
+
+  selectSong(id) {
+    let song = ProxyState.songs.find(s => s.id == id)
+    ProxyState.activeSong = song
+    console.log("this is select song in service", song)
+    console.log(ProxyState.activeSong)
+  }
   /**
    * Takes in a search query and retrieves the results that will be put in the store
    * @param {string} query
